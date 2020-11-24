@@ -11,7 +11,6 @@ function App() {
 
     return (
         <div className="container">
-            <Header />
             <AppContext.Provider
                 value={{
                     gallery,
@@ -19,6 +18,7 @@ function App() {
                 }}
             >
                 <Router>
+                    <Header />
                     <Switch>
                         <Route exact path="/" component={Gallery}></Route>
                         <Route exact path="/image/:id" component={ImageDetail}></Route>

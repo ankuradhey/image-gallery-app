@@ -1,11 +1,12 @@
 import React, { FC } from "react";
+import { Link } from "react-router-dom";
 import "./Header.css";
 export const Header: FC = () => {
     return (
         <header>
-            <a className="logo" href="javascript:;">
+            <Link className="logo" to="/">
                 Image Gallery
-            </a>
+            </Link>
         </header>
     );
 };
