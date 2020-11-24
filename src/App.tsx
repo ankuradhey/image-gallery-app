@@ -1,26 +1,32 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Gallery } from "./components/Gallery";
+import { Header } from "./components/Header";
+import { ImageDetail } from "./components";
+import { AppContext } from "./context/AppContext";
+import "./App.css";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [gallery, setGallery] = useState([]);
+
+    return (
+        <div className="container">
+            <Header />
+            <AppContext.Provider
+                value={{
+                    gallery,
+                    setGallery,
+                }}
+            >
+                <Router>
+                    <Switch>
+                        <Route exact path="/" component={Gallery}></Route>
+                        <Route exact path="/image/:id" component={ImageDetail}></Route>
+                    </Switch>
+                </Router>
+            </AppContext.Provider>
+        </div>
+    );
 }
 
 export default App;

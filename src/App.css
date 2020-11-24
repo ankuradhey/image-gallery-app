@@ -1,38 +1,109 @@
-.App {
-  text-align: center;
+header {
+    background-color: #282c34;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+    max-width: 1335px;
+    margin: 0 auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.grid-row {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.grid-item {
+    height: 350px;
+    flex-basis: 20%;
+    -ms-flex: auto;
+    width: 259px;
+    position: relative;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
-.App-link {
-  color: #61dafb;
+.grid-item-wrapper {
+    -webkit-box-sizing: initial;
+    -moz-box-sizing: initial;
+    box-sizing: initial;
+    background: #ececec;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    -webkit-transition: padding 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+        margin 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: padding 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+        margin 0.15s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.grid-item-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.grid-image-top {
+    height: 80%;
+    width: 120%;
+    background-size: cover;
+    position: relative;
+    background-position: 50% 50%;
+    left: -10.5%;
+    top: -4.5%;
+}
+
+.wrapping-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+}
+
+.grid-item-content {
+    padding: 0 20px 20px 20px;
+}
+
+.grid-item:hover .more-info i {
+    padding-left: 20px;
+    transition-duration: 0.5s;
+}
+
+.grid-item:hover .grid-item-wrapper {
+    padding: 2% 2%;
+    margin: -2% -2%;
+}
+
+@media (max-width: 1333px) {
+    .grid-item {
+        flex-basis: 33.33%;
+    }
+}
+
+@media (max-width: 1073px) {
+    .grid-item {
+        flex-basis: 33.33%;
+    }
+}
+
+@media (max-width: 815px) {
+    .grid-item {
+        flex-basis: 50%;
+    }
+}
+
+@media (max-width: 555px) {
+    .grid-item {
+        flex-basis: 100%;
+    }
 }
