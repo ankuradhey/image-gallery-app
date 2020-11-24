@@ -16,7 +16,6 @@ export const ImageDetail: FC = () => {
         if (!data || data.length === 0) {
             history.push("/");
         }
-        console.log(data, gallery);
         setImageData(data);
         setLoading(false);
     }, [id, gallery]);

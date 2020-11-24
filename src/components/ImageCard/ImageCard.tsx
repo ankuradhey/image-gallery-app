@@ -28,6 +28,9 @@ export const ImageCard: FC<ImageData> = ({ id, title, description, link, slug })
         }
     }, [isVisible]);
 
+    let titleContent = (description || title)?.trim();
+    titleContent = titleContent.length > 30 ? titleContent.slice(0, 30) + "..." : titleContent;
+
     return (
         <div className="card grid-item" ref={imageRef}>
             <Link to={`/image/${slug}`} className="wrapping-link"></Link>
@@ -40,7 +43,7 @@ export const ImageCard: FC<ImageData> = ({ id, title, description, link, slug })
                     ></div>
 
                     <div className="grid-item-content">
-                        <span className="item-excerpt">{description || title}</span>
+                        <span className="item-excerpt">{titleContent}</span>
                         <span className="more-info">View Detail</span>
                     </div>
                 </div>
