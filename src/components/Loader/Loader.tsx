@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { FC, useEffect, useRef } from "react";
 import { intersectionObserver } from "../../utils";
 import "./Loader.css";

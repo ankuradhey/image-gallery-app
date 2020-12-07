@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { FC, useEffect, useState, useContext } from "react";
 import { useParams, useHistory, Link } from "react-router-dom";
 import { AppContext } from "../../context/AppContext";

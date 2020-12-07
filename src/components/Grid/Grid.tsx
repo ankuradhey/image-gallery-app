@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { FC } from "react";
 import { ImageCard } from "../ImageCard";
 import { ImageData } from "../../types";

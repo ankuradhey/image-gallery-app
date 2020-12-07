@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { FC, useState, useEffect, useContext } from "react";
 import { Filter, Grid, Loader } from "../../components";
 import { AppContext } from "../../context/AppContext";

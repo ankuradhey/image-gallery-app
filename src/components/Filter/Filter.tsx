@@ -1,8 +1,14 @@
 import React, { FC } from "react";
-import { SECTIONS, SORT_BY, WINDOW_DURATION } from "../../types";
+import { FILTERS, SECTIONS, SORT_BY, WINDOW_DURATION } from "../../types";
 import "./Filter.css";
 
-export const Filter: FC = ({ section, window, sort, showViral, applyFilter }) => {
+export const Filter: FC<FILTERS & { applyFilter: (a: string, b: any) => void }> = ({
+    section,
+    window,
+    sort,
+    showViral,
+    applyFilter,
+}) => {
     return (
         <section className="filter">
             <div className="filter__group">
@@ -107,7 +113,7 @@ export const Filter: FC = ({ section, window, sort, showViral, applyFilter }) =>
                 <div className="filter__inputgroup">
                     <input
                         type="checkbox"
-                        value={showViral}
+                        checked={showViral}
                         onChange={() => applyFilter("showViral", !showViral)}
                     />
                 </div>
